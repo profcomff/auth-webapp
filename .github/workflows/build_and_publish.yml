@@ -89,9 +89,9 @@ jobs:
         runs-on: [self-hosted, Linux]
         environment:
             name: Testing
-            url: https://devtools.ui.test.profcomff.com/
+            url: https://auth.ui.test.profcomff.com/
         env:
-            CONTAITER_NAME: com_profcomff_ui_devtools_test
+            CONTAITER_NAME: com_profcomff_ui_auth_test
         permissions:
             packages: read
 
@@ -114,9 +114,9 @@ jobs:
         runs-on: [self-hosted, Linux]
         environment:
             name: Production
-            url: https://devtools.ui.profcomff.com/
+            url: https://auth.ui.profcomff.com/
         env:
-            CONTAITER_NAME: com_profcomff_ui_devtools
+            CONTAITER_NAME: com_profcomff_ui_auth
         permissions:
             packages: read
 
