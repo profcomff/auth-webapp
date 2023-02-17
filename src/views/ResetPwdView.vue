@@ -1,5 +1,5 @@
 <template>
-    <RouterView />
+    <p>reset</p>
 </template>
 
 <script>
