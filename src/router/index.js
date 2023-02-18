@@ -48,16 +48,13 @@ router.beforeEach(async (to, from) => {
     if (to.meta.oauthProvider) {
         console.log(to.query);
         try {
-            let resp = await fetch(
-                `${process.env.VUE_APP_API_AUTH}/${to.params.oauthProvider}/login`,
-                {
-                    method: 'POST',
-                    cache: 'no-cache',
-                    redirect: 'follow',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(to.query),
-                },
-            ).json();
+            let resp = await fetch(`${process.env.VUE_APP_API_AUTH}/${to.params.oauthProvider}/login`, {
+                method: 'POST',
+                cache: 'no-cache',
+                redirect: 'follow',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(to.query),
+            }).json();
             if (resp.token) return { path: '/user' };
             else return { path: '/auth' };
         } catch (error) {
